@@ -1,0 +1,31 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< com.coconutfarming:Coconut-Farming-System >--------------
+[INFO] Building User 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ Coconut-Farming-System ---
+[INFO] Deleting D:\2Y2S Projects\Coconut-Farming-Management-System\Coconut-Farming-System\Backend\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ Coconut-Farming-System ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ Coconut-Farming-System ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 120 source files with javac [debug release 17] to target\classes
+[WARNING] /D:/2Y2S Projects/Coconut-Farming-Management-System/Coconut-Farming-System/Backend/src/main/java/com/coconutfarming/labor/model/Worker.java:[43,26] @Builder will ignore the initializing expression entirely. If you want the initializing expression to serve as default, add @Builder.Default. If it is not supposed to be settable during building, make the field final.
+[WARNING] /D:/2Y2S Projects/Coconut-Farming-Management-System/Coconut-Farming-System/Backend/src/main/java/com/coconutfarming/labor/model/Task.java:[42,26] @Builder will ignore the initializing expression entirely. If you want the initializing expression to serve as default, add @Builder.Default. If it is not supposed to be settable during building, make the field final.
+[WARNING] /D:/2Y2S Projects/Coconut-Farming-Management-System/Coconut-Farming-System/Backend/src/main/java/com/coconutfarming/labor/model/Task.java:[46,24] @Builder will ignore the initializing expression entirely. If you want the initializing expression to serve as default, add @Builder.Default. If it is not supposed to be settable during building, make the field final.
+[WARNING] /D:/2Y2S Projects/Coconut-Farming-Management-System/Coconut-Farming-System/Backend/src/main/java/com/coconutfarming/inventory/model/Supplier.java:[44,21] @Builder will ignore the initializing expression entirely. If you want the initializing expression to serve as default, add @Builder.Default. If it is not supposed to be settable during building, make the field final.
+[WARNING] /D:/2Y2S Projects/Coconut-Farming-Management-System/Coconut-Farming-System/Backend/src/main/java/com/coconutfarming/inventory/model/InventoryItem.java:[33,24] @Builder will ignore the initializing expression entirely. If you want the initializing expression to serve as default, add @Builder.Default. If it is not supposed to be settable during building, make the field final.
+[WARNING] /D:/2Y2S Projects/Coconut-Farming-Management-System/Coconut-Farming-System/Backend/src/main/java/com/coconutfarming/inventory/model/InventoryItem.java:[40,24] @Builder will ignore the initializing expression entirely. If you want the initializing expression to serve as default, add @Builder.Default. If it is not supposed to be settable during building, make the field final.
+[WARNING] /D:/2Y2S Projects/Coconut-Farming-Management-System/Coconut-Farming-System/Backend/src/main/java/com/coconutfarming/inventory/model/InventoryItem.java:[44,24] @Builder will ignore the initializing expression entirely. If you want the initializing expression to serve as default, add @Builder.Default. If it is not supposed to be settable during building, make the field final.
+[WARNING] /D:/2Y2S Projects/Coconut-Farming-Management-System/Coconut-Farming-System/Backend/src/main/java/com/coconutfarming/inventory/model/InventoryItem.java:[64,21] @Builder will ignore the initializing expression entirely. If you want the initializing expression to serve as default, add @Builder.Default. If it is not supposed to be settable during building, make the field final.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.695 s
+[INFO] Finished at: 2026-03-23T09:42:13+05:30
+[INFO] ------------------------------------------------------------------------

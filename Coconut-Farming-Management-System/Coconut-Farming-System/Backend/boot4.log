@@ -1,0 +1,72 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-03-23T11:10:19.880+05:30  INFO 5244 --- [           main] com.coconutfarming.UserApplication       : Starting UserApplication v0.0.1-SNAPSHOT using Java 23 with PID 5244 (D:\2Y2S Projects\Coconut-Farming-Management-System\Coconut-Farming-System\Backend\target\Coconut-Farming-System-0.0.1-SNAPSHOT.jar started by Thisaja in D:\2Y2S Projects\Coconut-Farming-Management-System\Coconut-Farming-System\Backend)
+2026-03-23T11:10:19.880+05:30 DEBUG 5244 --- [           main] com.coconutfarming.UserApplication       : Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-03-23T11:10:19.881+05:30  INFO 5244 --- [           main] com.coconutfarming.UserApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-03-23T11:10:20.759+05:30  INFO 5244 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-23T11:10:20.901+05:30  INFO 5244 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 137 ms. Found 22 JPA repository interfaces.
+2026-03-23T11:10:21.602+05:30  INFO 5244 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-03-23T11:10:21.614+05:30  INFO 5244 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-23T11:10:21.614+05:30  INFO 5244 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-03-23T11:10:21.650+05:30  INFO 5244 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-23T11:10:21.651+05:30  INFO 5244 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1702 ms
+2026-03-23T11:10:21.845+05:30  INFO 5244 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-23T11:10:21.978+05:30  INFO 5244 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-03-23T11:10:22.009+05:30  INFO 5244 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-23T11:10:22.156+05:30  INFO 5244 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-23T11:10:22.176+05:30  INFO 5244 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-23T11:10:22.436+05:30  INFO 5244 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38e46765
+2026-03-23T11:10:22.437+05:30  INFO 5244 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-23T11:10:22.484+05:30  WARN 5244 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-23T11:10:23.551+05:30  INFO 5244 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table articles (id bigint not null auto_increment, content TEXT not null, created_at datetime(6) not null, title varchar(255) not null, updated_at datetime(6), category_id bigint, user_id bigint, primary key (id)) engine=InnoDB
+Hibernate: create table categories (id bigint not null auto_increment, description varchar(1000), name varchar(255) not null, primary key (id)) engine=InnoDB
+Hibernate: create table comments (id bigint not null auto_increment, content TEXT not null, created_at datetime(6) not null, updated_at datetime(6), article_id bigint not null, user_id bigint not null, primary key (id)) engine=InnoDB
+Hibernate: create table community_users (id bigint not null auto_increment, created_at datetime(6) not null, email varchar(255) not null, name varchar(255) not null, password varchar(255) not null, role enum ('FARMER','OFFICER','ADMIN') not null, primary key (id)) engine=InnoDB
+Hibernate: create table financial_records (id bigint not null auto_increment, amount decimal(12,2) not null, category varchar(255) not null, created_at datetime(6), description varchar(500), record_date date not null, record_type enum ('INCOME','EXPENSE') not null, updated_at datetime(6), primary key (id)) engine=InnoDB
+Hibernate: create table inventory_items (item_id integer not null auto_increment, category varchar(50) not null, created_at datetime(6), description varchar(500), farm_section varchar(100), is_active bit, item_name varchar(150) not null, min_stock_level decimal(38,2) not null, quantity decimal(38,2) not null, unit varchar(30) not null, unit_price decimal(38,2), updated_at datetime(6), supplier_id integer, primary key (item_id)) engine=InnoDB
+Hibernate: create table plantation_locations (id bigint not null auto_increment, created_at datetime(6), description varchar(500), latitude float(53) not null, longitude float(53) not null, name varchar(255) not null, primary key (id)) engine=InnoDB
+Hibernate: create table purchase_history (purchase_id integer not null auto_increment, created_at datetime(6), notes varchar(500), purchase_date date not null, quantity decimal(38,2) not null, unit_price decimal(38,2) not null, item_id integer not null, supplier_id integer, primary key (purchase_id)) engine=InnoDB
+Hibernate: create table suppliers (supplier_id integer not null auto_increment, address varchar(300), contact_person varchar(100), created_at datetime(6), email varchar(100), is_active bit, phone varchar(20), supplier_name varchar(150) not null, updated_at datetime(6), primary key (supplier_id)) engine=InnoDB
+Hibernate: create table task_categories (id bigint not null auto_increment, created_at datetime(6), description TEXT, name varchar(255) not null, updated_at datetime(6), primary key (id)) engine=InnoDB
+Hibernate: create table tasks (id bigint not null auto_increment, actual_hours float(53), created_at datetime(6), description TEXT, due_date datetime(6) not null, estimated_hours float(53), priority enum ('LOW','MEDIUM','HIGH','URGENT') not null, status enum ('PENDING','IN_PROGRESS','COMPLETED','CANCELLED','ON_HOLD') not null, title varchar(255) not null, updated_at datetime(6), category_id bigint, assigned_worker_id bigint, primary key (id)) engine=InnoDB
+Hibernate: create table usage_tracking (usage_id integer not null auto_increment, created_at datetime(6), farm_section varchar(100), purpose varchar(300), quantity_used decimal(38,2) not null, usage_date date not null, used_by varchar(100), item_id integer not null, primary key (usage_id)) engine=InnoDB
+Hibernate: create table work_logs (id bigint not null auto_increment, created_at datetime(6), end_time datetime(6), hours_worked float(53) not null, notes TEXT, start_time datetime(6), updated_at datetime(6), work_date date not null, task_id bigint not null, worker_id bigint not null, primary key (id)) engine=InnoDB
+Hibernate: create table workers (id bigint not null auto_increment, created_at datetime(6), email varchar(255), hire_date datetime(6) not null, hourly_rate float(53), name varchar(255) not null, phone_number varchar(255), skills TEXT, status enum ('ACTIVE','INACTIVE','ON_LEAVE') not null, updated_at datetime(6), primary key (id)) engine=InnoDB
+Hibernate: alter table categories drop index UK_t8o6pivur7nn124jehx7cygw5
+Hibernate: alter table categories add constraint UK_t8o6pivur7nn124jehx7cygw5 unique (name)
+Hibernate: alter table community_users drop index UK_c5v0og9h25ipqt6h7oadaejnx
+Hibernate: alter table community_users add constraint UK_c5v0og9h25ipqt6h7oadaejnx unique (email)
+Hibernate: alter table task_categories drop index UK_qi3qxb033xn21iqd1s2aybt2n
+Hibernate: alter table task_categories add constraint UK_qi3qxb033xn21iqd1s2aybt2n unique (name)
+Hibernate: alter table workers drop index UK_ad72yjctb2w3bn94m6dj5kxxk
+Hibernate: alter table workers add constraint UK_ad72yjctb2w3bn94m6dj5kxxk unique (email)
+Hibernate: alter table articles add constraint FK7i4rryg7kqwyyrr08temnc71e foreign key (category_id) references categories (id)
+Hibernate: alter table articles add constraint FKfvmvtgwgenfqgecwxe27b0rr9 foreign key (user_id) references community_users (id)
+Hibernate: alter table comments add constraint FKk4ib6syde10dalk7r7xdl0m5p foreign key (article_id) references articles (id)
+Hibernate: alter table comments add constraint FK83uve0nyxhxerg55ypptk1aqv foreign key (user_id) references community_users (id)
+Hibernate: alter table inventory_items add constraint FKhc7q0chmfralakw27k36ds0c1 foreign key (supplier_id) references suppliers (supplier_id)
+Hibernate: alter table purchase_history add constraint FKn40q6ed3y8a2jjrn9b417x65u foreign key (item_id) references inventory_items (item_id)
+Hibernate: alter table purchase_history add constraint FKq28rsmelsfjbmmiaeguaxjf7d foreign key (supplier_id) references suppliers (supplier_id)
+Hibernate: alter table tasks add constraint FK42ldd63quus0efpi2ec64q0qg foreign key (category_id) references task_categories (id)
+Hibernate: alter table tasks add constraint FK2b04c5hwk9jai000m6x269gr foreign key (assigned_worker_id) references workers (id)
+Hibernate: alter table usage_tracking add constraint FKnq5m6fiylrlrtkaf9y6f9tv91 foreign key (item_id) references inventory_items (item_id)
+Hibernate: alter table work_logs add constraint FKnr36yywrumho6jtiwxw25swb9 foreign key (task_id) references tasks (id)
+Hibernate: alter table work_logs add constraint FK51hnomes793k98hp8s4esnvt6 foreign key (worker_id) references workers (id)
+2026-03-23T11:10:26.047+05:30  INFO 5244 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-23T11:10:26.295+05:30 DEBUG 5244 --- [           main] c.c.user.security.AuthTokenFilter        : Filter 'authenticationJwtTokenFilter' configured for use
+2026-03-23T11:10:26.465+05:30  INFO 5244 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-23T11:10:27.522+05:30 DEBUG 5244 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 126 mappings in 'requestMappingHandlerMapping'
+2026-03-23T11:10:27.618+05:30 DEBUG 5244 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /uploads/**] in 'resourceHandlerMapping'
+2026-03-23T11:10:27.670+05:30  INFO 5244 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@30ba29cf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@552da55b, org.springframework.security.web.context.SecurityContextHolderFilter@6b8eb7b2, org.springframework.security.web.header.HeaderWriterFilter@4ecbd1da, org.springframework.web.filter.CorsFilter@9215bfb, org.springframework.security.web.authentication.logout.LogoutFilter@71374a2b, com.coconutfarming.user.security.AuthTokenFilter@458500d1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54210bb8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63574fbf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@48e2b4b7, org.springframework.security.web.session.SessionManagementFilter@770ad1f0, org.springframework.security.web.access.ExceptionTranslationFilter@717b5af1, org.springframework.security.web.access.intercept.AuthorizationFilter@68f1b06b]
+2026-03-23T11:10:27.764+05:30 DEBUG 5244 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-03-23T11:10:27.806+05:30 DEBUG 5244 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-03-23T11:10:27.968+05:30  INFO 5244 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-03-23T11:10:27.981+05:30  INFO 5244 --- [           main] com.coconutfarming.UserApplication       : Started UserApplication in 8.437 seconds (process running for 9.006)

@@ -1,0 +1,38 @@
+2026-03-21T12:21:42.418+05:30  INFO 15964 --- [main] com.coconutfarming.UserApplication       : Starting UserApplication using Java 23 with PID 15964 (D:\2Y2S Projects\Coconut-Farming-Management-System\Coconut-Farming-System\Backend\target\classes started by Thisaja in D:\2Y2S Projects\Coconut-Farming-Management-System\Coconut-Farming-System\Backend)
+2026-03-21T12:21:42.419+05:30 DEBUG 15964 --- [main] com.coconutfarming.UserApplication       : Running with Spring Boot v4.0.3, Spring v7.0.5
+2026-03-21T12:21:42.420+05:30  INFO 15964 --- [main] com.coconutfarming.UserApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-03-21T12:21:42.802+05:30  INFO 15964 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-21T12:21:42.846+05:30  INFO 15964 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 8 JPA repository interfaces.
+2026-03-21T12:21:43.152+05:30  INFO 15964 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-03-21T12:21:43.160+05:30  INFO 15964 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-21T12:21:43.161+05:30  INFO 15964 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-21T12:21:43.189+05:30  INFO 15964 --- [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 733 ms
+2026-03-21T12:21:43.270+05:30  INFO 15964 --- [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-21T12:21:43.297+05:30  INFO 15964 --- [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-21T12:21:43.539+05:30  INFO 15964 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-21T12:21:43.558+05:30  INFO 15964 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-21T12:21:43.792+05:30  INFO 15964 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a34c1f6
+2026-03-21T12:21:43.794+05:30  INFO 15964 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-21T12:21:43.841+05:30  INFO 15964 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/coconut_db?createDatabaseIfNotExist=true]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.45
+	Default catalog/schema: coconut_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-21T12:21:44.536+05:30  INFO 15964 --- [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-21T12:21:45.810+05:30  INFO 15964 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-21T12:21:45.847+05:30  INFO 15964 --- [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-21T12:21:45.970+05:30 DEBUG 15964 --- [main] c.c.user.security.AuthTokenFilter        : Filter 'authenticationJwtTokenFilter' configured for use
+2026-03-21T12:21:46.686+05:30  INFO 15964 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-03-21T12:21:46.866+05:30 DEBUG 15964 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 32 mappings in 'requestMappingHandlerMapping'
+2026-03-21T12:21:46.882+05:30 DEBUG 15964 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /uploads/**] in 'resourceHandlerMapping'
+2026-03-21T12:21:46.900+05:30 DEBUG 15964 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-03-21T12:21:46.930+05:30 DEBUG 15964 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-03-21T12:21:47.002+05:30  INFO 15964 --- [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-03-21T12:21:47.005+05:30  INFO 15964 --- [main] com.coconutfarming.UserApplication       : Started UserApplication in 4.855 seconds (process running for 5.088)
